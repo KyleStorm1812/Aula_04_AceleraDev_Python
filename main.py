@@ -6,5 +6,7 @@ def create_token(data, secret):
 
 
 def verify_signature(token):
-    return jwt.decode(token, "acelera")
-
+    try:
+        return jwt.decode(token, "acelera")
+    except:
+        return {"error": 2}
